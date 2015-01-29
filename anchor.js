@@ -20,6 +20,7 @@
 		settings: {
 			transitionDuration: 2000,
 			transitionTimingFunction: 'swing',
+			sectionTopOffset: 0,
 			labels: {
 				error: 'Couldn\'t find any section'
 			}
@@ -41,7 +42,7 @@
 				$this.unbind('click').click(function (event) {
 					event.preventDefault();
 					anchor.jumpTo(
-						anchor.getTopOffsetPosition($this),
+						anchor.getTopOffsetPosition($this) - $this.data('settings').sectionTopOffset,
 						$this.data('settings')
 					);
 				});
